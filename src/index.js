@@ -1,6 +1,7 @@
-const resultado  = async(e)=>{
-    const respuesta =  await console.log(e)
-    return respuesta; 
-}
+import { contar } from "./count";
 
+const resultado  = async()=>{
+    const respuesta =  await contar(prompt("veces a contar"))
+    
+}
 resultado()
