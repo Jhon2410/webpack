@@ -1,6 +1,11 @@
 const htmlWebopackPlugin  = require("html-webpack-plugin");
 
 module.exports = {
+    entry : "./src/index.js",
+    output : {
+        path : __dirname + "/dist",
+        filename : "index.js"
+    },
     module : {
         rules : [
             {
@@ -15,6 +20,17 @@ module.exports = {
                 use : {
                     loader :  "html-loader"
                 }
+            },
+            {
+                test :  "/\.css$/i",
+                use : [
+                    {
+                    loader :  "style-loader"
+                    },
+                    {
+                        loader :  "css-loader"
+                    }
+                ]
             }
 
         ]
